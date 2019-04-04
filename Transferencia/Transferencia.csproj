@@ -174,12 +174,35 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903281607569_MigracionInicial.cs" />
+    <Compile Include="Migrations\201903281607569_MigracionInicial.Designer.cs">
+      <DependentUpon>201903281607569_MigracionInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903281635204_AdicionModeloClientes.cs" />
+    <Compile Include="Migrations\201903281635204_AdicionModeloClientes.Designer.cs">
+      <DependentUpon>201903281635204_AdicionModeloClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903281638010_ActualizacionCantidadCaracCliente.cs" />
+    <Compile Include="Migrations\201903281638010_ActualizacionCantidadCaracCliente.Designer.cs">
+      <DependentUpon>201903281638010_ActualizacionCantidadCaracCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903281656217_ActualizacionRequeridoNombreCliente.cs" />
+    <Compile Include="Migrations\201903281656217_ActualizacionRequeridoNombreCliente.Designer.cs">
+      <DependentUpon>201903281656217_ActualizacionRequeridoNombreCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903291531121_UpdClienteRequireds.cs" />
+    <Compile Include="Migrations\201903291531121_UpdClienteRequireds.Designer.cs">
+      <DependentUpon>201903291531121_UpdClienteRequireds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,14 +272,33 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Clientes\Detalle.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201903281607569_MigracionInicial.resx">
+      <DependentUpon>201903281607569_MigracionInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903281635204_AdicionModeloClientes.resx">
+      <DependentUpon>201903281635204_AdicionModeloClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903281638010_ActualizacionCantidadCaracCliente.resx">
+      <DependentUpon>201903281638010_ActualizacionCantidadCaracCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903281656217_ActualizacionRequeridoNombreCliente.resx">
+      <DependentUpon>201903281656217_ActualizacionRequeridoNombreCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903291531121_UpdClienteRequireds.resx">
+      <DependentUpon>201903291531121_UpdClienteRequireds.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
