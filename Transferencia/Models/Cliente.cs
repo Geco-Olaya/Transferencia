@@ -10,8 +10,9 @@ namespace Transferencia.Models
     {
         public int Id { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Hey!! paila ...")]
         [StringLength(200)]
+        [Display(Name = "Tu nombre")]
         public string Nombre { get; set; }
 
         [Required]

@@ -1,31 +1,39 @@
 ﻿@model IEnumerable<Transferencia.Models.Cliente>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Identificación</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
+<p>
+    @Html.ActionLink("Create New", "Create", "Clientes")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Identificacion)
+        </th>
+        <th></th>
+    </tr>
 
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>@item.Nombre</td>
-            <td>@item.Identificacion</td>
-            @*<td><a href="/Clientes/Detalle/@item.Id">Ver detalle</a></td>*@
-            <td>@Html.ActionLink("Ver detalle", "Detalle", "Clientes", new { id = item.Id }, null)</td>
-            @*<td>@Html.ActionLink("Hey","Detalle", "Clientes", new { id = item.Id }, new { @class = "text-danger" })</td>*@
-        </tr>
-           }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-
-    </tbody>
 </table>
